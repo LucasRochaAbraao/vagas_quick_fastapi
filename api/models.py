@@ -27,9 +27,11 @@ class PyObjectId(ObjectId):
 
 class Vaga(BaseModel):
     id: Optional[PyObjectId] = Field(alias='_id')
-    vaga: str
+    titulo: str
     atividades: str
     requisitos: str
+    destaques: str
+    ativo: bool
 
     class Config:
         arbitrary_types_allowed = True
