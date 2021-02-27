@@ -33,7 +33,7 @@ bot.cluster = MongoClient(os.environ["DB_URI"])
 bot.db = bot.cluster['vagas_quick']
 bot.collection = bot.db["vagas"]
 
-for extension in os.listdir("./cogs"):
+for extension in os.listdir("./discord_bot/cogs"):
     if extension.endswith(".py"):
         try:
             bot.load_extension(f'cogs.{extension[:-3]}')

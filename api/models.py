@@ -31,7 +31,7 @@ class Vaga(BaseModel):
     atividades: str
     requisitos: str
     destaques: str
-    ativo: bool
+    ativo: bool = True
 
     class Config:
         arbitrary_types_allowed = True
@@ -39,3 +39,9 @@ class Vaga(BaseModel):
             ObjectId: str
         }
 
+"""
+from models import db, Vaga
+async def criar_vaga(vaga: Vaga):
+    ret = db.vagas.insert_one(vaga.dict(by_alias=True))
+        vaga.id = ret.inserted_id
+"""

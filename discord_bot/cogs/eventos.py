@@ -33,13 +33,6 @@ class EventsCog(commands.Cog, name = "Eventos"):
             return
 
     @commands.Cog.listener()
-    async def on_message_delete(self, msg):
-        ''' Mensagem no canal ao detectar uma mensagem deletada.'''
-        print(f"{msg.author.name} apagou: {msg.content}") #debug no console, ainda não testei
-        # futuramente, caso seja necessário, posso criar um log com mensagens deletadas (autor, data, etc)
-        await msg.channel.send(content=f"@{msg.author.name}", file=discord.File("resources/msg_on_delete.png"))
-
-    @commands.Cog.listener()
     async def on_member_join(self, member):
         #caso queira mensagem privada:
         #''' Mensagem de boas vindas privada.'''
